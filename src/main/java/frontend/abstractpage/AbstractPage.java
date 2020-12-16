@@ -56,11 +56,6 @@ public abstract class AbstractPage {
         }
     }
 
-//    protected void waitUntilInvisibilityOfSpinner(){
-//        Waits.waitUntilSpinnerNoLongerDisplayed(driver);
-//        LOG.info("Spinner no longer displayed");
-//    }
-
     protected void waitUntilInvisibilityOfElement(WebElement element) {
         Waits.waitUntilInvisibilityOfElement(element, driver);
         LOG.info("Element no longer displayed.");
