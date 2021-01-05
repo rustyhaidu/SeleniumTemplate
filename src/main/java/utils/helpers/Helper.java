@@ -1,6 +1,9 @@
 
 package utils.helpers;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -57,4 +60,26 @@ public class Helper {
         // this will convert any number sequence into 4 character.
         return String.format("%04d", number);
     }
+
+    public static boolean runScript(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (Boolean) js.executeScript("return jQuery.active==0;");
+    }
+
+
+    public static boolean focusOnWindow(WebDriver driver) throws Exception {
+        int i = 0;
+        do {
+            if (!runScript(driver)) {
+                System.out.println("Popup exists");
+                i++;
+                return true;
+            } else {
+                i = 5000;
+                System.out.println("Popup does not exists");
+                return false;
+            }
+        } while (i < 5000);
+    }
+
 }

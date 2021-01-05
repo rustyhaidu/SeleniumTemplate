@@ -1,25 +1,28 @@
 package model;
 
 public class Product {
-    private String code;
+    private String description;
     private String name;
     private double price;
+    private int stock;
 
     public Product(){
 
     }
-    public Product(String code, String name, double price) {
-        this.code = code;
+
+    public Product(String description, String name, double price, int stock) {
+        this.description = description;
         this.name = name;
         this.price = price;
+        this.stock = stock;
     }
 
-    public String getCode() {
-        return code;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getName() {
@@ -36,5 +39,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }

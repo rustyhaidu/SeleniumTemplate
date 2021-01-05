@@ -5,20 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import utils.helpers.Helper;
 
 public class LoginPage extends AbstractPage {
 
-    @FindBy(how = How.CSS, using = "input[name='userName']")
+    @FindBy(how = How.CSS, using = "input[name='username']")
     private WebElement userNameInput;
 
     @FindBy(how = How.CSS, using = "input[name='password']")
     private WebElement passwordInput;
 
-    @FindBy(how = How.CSS, using = "input[id='submit_login']")
-    private WebElement submitLogin;
-
-    @FindBy(how = How.CSS, using = "div[id='error_message']")
-    private WebElement error;
+    @FindBy(how = How.CSS, using = "input[id='loginButton']")
+    private WebElement loginButton;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -32,12 +30,12 @@ public class LoginPage extends AbstractPage {
         passwordInput.sendKeys(password);
     }
 
-    public void clickSubmitLogin() {
-        submitLogin.click();
+    public void clickOnLogin() {
+        loginButton.click();
     }
 
-    public String getErrorMessage() {
-        return error.getText();
+    public boolean isPopUpDisplayed() throws Exception {
+        return Helper.focusOnWindow(driver);
     }
 
 }

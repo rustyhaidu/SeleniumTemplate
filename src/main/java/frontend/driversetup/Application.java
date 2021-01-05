@@ -11,28 +11,11 @@ public class Application {
         this.driver = driver;
     }
 
-    public IndexPage createIndexPage() {
-        return new IndexPage(driver);
+    public HomePage createHomePage() {
+        return new HomePage(driver);
     }
 
     public LoginPage createLoginPage() {
         return new LoginPage(driver);
     }
-
-    public ProductListPage createProductList() {
-        return new ProductListPage(driver);
-    }
-
-    public ShoppingCartPage createShoppingCartPage() {
-        return new ShoppingCartPage(driver);
-    }
-
-    public ShoppingCartCustomerPage createShoppingCartCustomerPage() {
-        return new ShoppingCartCustomerPage(driver);
-    }
-
-    public ShoppingCartConfirmationPage createShoppingCartConfirmationPage() {
-        return new ShoppingCartConfirmationPage(driver);
-    }
-
 }

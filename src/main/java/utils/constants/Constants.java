@@ -9,6 +9,6 @@ public class Constants {
     public static final String MAC_CHROME_DRIVER_RELATIVE_PATH = "drivers/mac_chromedriver_v87/chromedriver";
 
     // BASE URL
-    public static final String BASE_URL = "http://localhost:9090";
+    public static final String BASE_URL = "http://localhost:8080";
 
 }

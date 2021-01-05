@@ -53,10 +53,10 @@ public class BaseTest {
     /**
      * Method is used to quit the Chrome Driver after each test method.
      */
-    /*@AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void closeDriver() {
         driver.quit();
-    }*/
+    }
 
 
     /**
